@@ -233,88 +233,6 @@ h1,h2,h3,h4,.pr{font-family:'Prompt',sans-serif}
 .p5 .brandsbar .k{height:10mm}
 .p5 .brandsbar .sep{width:1px;height:10mm;background:#dfe6ef}
 .p5 .deco{position:absolute;right:0;top:0}
-
-/* ---------- responsive: tablet & desktop — scale A4 pages to fill the width ---------- */
-@media screen and (min-width:760px){
-  html,body{background:var(--navy2);overflow-x:hidden}
-  .page{margin:0 auto;box-shadow:none;zoom:var(--z,1)}
-}
-
-/* ---------- responsive: mobile — reflow into a single column ---------- */
-@media screen and (max-width:759.98px){
-  html,body{background:#fff;overflow-x:hidden}
-  .page{width:100%;height:auto;margin:0;box-shadow:none}
-  .pix,.abs{display:none}
-  .hdr{position:relative;height:auto;padding:5mm 5mm 3mm}
-  .ftr{position:relative;height:auto;padding:4mm 5mm;margin-top:1.4mm}
-  .page .content{position:relative;left:auto;right:auto;top:auto;padding:3mm 5mm 9mm}
-  .h-sec{font-size:22pt}
-  .lead{font-size:11.5pt}
-
-  /* cover */
-  .p1{background:var(--navy);padding-bottom:8mm}
-  .p1 .photo{position:relative;width:100%;height:62vw;bottom:auto}
-  .p1 .rail{position:relative;left:0;width:100%;height:2.2mm}
-  .p1 .panel{display:none}
-  .p1 .logo-pill{position:relative;top:auto;left:auto;margin:7mm 0 0 5mm;height:auto;padding:3mm 4mm;border-radius:14mm 0 0 14mm}
-  .p1 .logo-pill img{width:18mm;height:18mm}
-  .p1 .titlebox{position:relative;top:auto;width:auto;margin:6mm 0 0 5mm;padding:6mm 5mm}
-  .p1 .titlebox h1{font-size:28pt}
-  .p1 .tag{position:relative;left:auto;right:auto;top:auto;padding:0 5mm;margin-top:8mm}
-  .p1 .contact{position:relative;right:auto;bottom:auto;padding:0 5mm;margin-top:6mm}
-  .p1 .contact .row{font-size:12.5pt}
-  .p1 .brands{position:relative;left:auto;right:auto;bottom:auto;margin:8mm 5mm 0}
-  .p1 .year{top:calc(62vw - 14mm);bottom:auto;left:5mm}
-
-  /* overview */
-  .p2 .ov{grid-template-columns:1fr}
-  .p2 .ov .card p{font-size:12pt}
-  .p2 .ov .img{min-height:50mm}
-  .p2 .mis-h{margin-top:10mm;flex-wrap:wrap;gap:2mm}
-  .p2 .mgrid{grid-template-columns:1fr}
-  .p2 .vision{margin-right:0;flex-direction:column;align-items:flex-start;gap:2mm}
-
-  /* brands */
-  .p3 .kenna .top{padding:7mm 5mm 5mm}
-  .p3 .kenna .top img{width:100%;max-width:108mm}
-  .p3 .kenna .body{grid-template-columns:1fr;gap:5mm;padding:6mm 5mm}
-  .p3 .pair{grid-template-columns:1fr}
-  .p3 .b .lg img{max-width:70%}
-  .p3 .ask{flex-direction:column;align-items:flex-start;gap:3mm}
-
-  /* special tools */
-  .sp .hero{grid-template-columns:1fr}
-  .sp .hero .tx{padding:6mm 6mm 0}
-  .sp .hero .draw{padding:4mm 4mm 10mm}
-  .sp .cats{grid-template-columns:1fr}
-  .sp .flow{grid-template-columns:1fr 1fr}
-  .sp .flow div:after{display:none}
-
-  /* products */
-  .p4 .blk{padding:7mm 4mm 4mm;border-radius:5mm}
-  .p4 .blk .lbl{font-size:13pt;left:5mm}
-  .p4 .g1 .im{height:34mm}
-  .p4 .desc{grid-template-columns:1fr}
-  .p4 .g2{grid-template-columns:1fr}
-  .p4 .g2 .im{height:55mm}
-  .p4 .list{grid-template-columns:1fr}
-  .p4 .logos-row{flex-wrap:wrap}
-  .p4 .strip{grid-template-columns:1fr 1fr}
-
-  /* services + contact */
-  .p5{background:var(--mist)}
-  .p5 .top{display:none}
-  .p5 .steps{grid-template-columns:1fr 1fr;row-gap:7mm}
-  .p5 .steps:before{display:none}
-  .p5 .why{grid-template-columns:1fr}
-  .p5 .cta{position:relative;height:auto;padding-bottom:8mm}
-  .p5 .cta .in{position:relative;left:auto;right:auto;top:auto;padding:10mm 5mm 0}
-  .p5 .cta h2{font-size:22pt}
-  .p5 .cards{grid-template-columns:1fr;max-width:none}
-  .p5 .brandsbar{position:relative;left:auto;right:auto;bottom:auto;margin:8mm 5mm 0;flex-wrap:wrap;gap:4mm}
-  .p5 .brandsbar img{height:7mm}
-  .p5 .brandsbar .k{height:8mm}
-}
 </style>
 </head>
 <body>
@@ -612,17 +530,5 @@ h1,h2,h3,h4,.pr{font-family:'Prompt',sans-serif}
   </div>
 </section>
 
-<script>
-/* Scale the A4 pages to the viewport width on tablet/desktop (CSS uses var(--z)) */
-(function(){
-  var A4 = 210 * 96 / 25.4;
-  function fit(){
-    var w = document.documentElement.clientWidth;
-    document.documentElement.style.setProperty('--z', w >= 760 ? (w / A4).toFixed(4) : 1);
-  }
-  fit();
-  window.addEventListener('resize', fit);
-})();
-</script>
 </body>
 </html>
