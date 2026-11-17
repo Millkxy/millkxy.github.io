@@ -137,6 +137,10 @@ section{padding:110px 0}
 .src:hover .cap,.src:focus-within .cap{opacity:1;transform:none}
 @media (hover:none){ .src .cap{opacity:1;transform:none;font-size:11px;padding:5px 9px} }
 
+.src .hit{position:absolute;inset:0;z-index:1;cursor:zoom-in}
+.src .cap{z-index:2}
+.src .cap:hover{background:var(--blue)}
+.show .label{z-index:3}
 /* maker row (7leaders factory) */
 .maker{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:20px}
 .maker .src{border-radius:var(--r);aspect-ratio:16/8;background:#fff}
@@ -431,13 +435,15 @@ footer .logos{display:flex;gap:10px;align-items:center}
 
     <div class="maker">
       <div class="maker-note rv"><b>7leaders — ผู้ผลิตจากไต้หวัน ตั้งแต่ปี 1990</b><span>ผลิตอัตโนมัติ 24 ชั่วโมง พร้อมบริการเคลือบผิวทูล (PVD Coating)</span></div>
-      <figure class="src rv" title="ที่มา: แคตตาล็อก 7leaders / OSL 2026 — หน้า 2">
+      <figure class="src rv" title="ที่มา: แคตตาล็อก 7leaders / OSL 2026 — หน้า 2 · คลิกเพื่อเปิดแคตตาล็อก">
+          <a class="hit" href="catalogs/7leaders-osl-catalog-2026.pdf#page=2" target="_blank" rel="noopener" aria-label="เปิดแคตตาล็อกหน้าที่มาของรูป"></a>
         <img src="img/catalog/osl-factory.jpg" alt="สายการผลิตเครื่องเจียร CNC ของ 7leaders" loading="lazy">
-        <span class="cap">ที่มา: แคตตาล็อก 7leaders / OSL 2026 · หน้า 2</span>
+        <a class="cap" href="catalogs/7leaders-osl-catalog-2026.pdf#page=2" target="_blank" rel="noopener">ที่มา: แคตตาล็อก 7leaders / OSL 2026 · หน้า 2 ↗</a>
       </figure>
-      <figure class="src rv" title="ที่มา: แคตตาล็อก 7leaders / OSL 2026 — หน้า 5">
+      <figure class="src rv" title="ที่มา: แคตตาล็อก 7leaders / OSL 2026 — หน้า 5 · คลิกเพื่อเปิดแคตตาล็อก">
+          <a class="hit" href="catalogs/7leaders-osl-catalog-2026.pdf#page=5" target="_blank" rel="noopener" aria-label="เปิดแคตตาล็อกหน้าที่มาของรูป"></a>
         <img src="img/catalog/osl-coating.jpg" alt="งานเคลือบผิวทูล และการทดสอบตัดงานจริง" loading="lazy">
-        <span class="cap">ที่มา: แคตตาล็อก 7leaders / OSL 2026 · หน้า 5</span>
+        <a class="cap" href="catalogs/7leaders-osl-catalog-2026.pdf#page=5" target="_blank" rel="noopener">ที่มา: แคตตาล็อก 7leaders / OSL 2026 · หน้า 5 ↗</a>
       </figure>
     </div>
     <div class="help rv">
@@ -537,30 +543,34 @@ footer .logos{display:flex;gap:10px;align-items:center}
     <div class="show">
       <div class="tile big rv">
         <div class="label"><b>Solid Carbide End Mills</b><span>7leaders / OSL</span></div>
-        <figure class="src" title="ที่มา: แคตตาล็อก 7leaders / OSL 2026 — หน้า 81">
+        <figure class="src" title="ที่มา: แคตตาล็อก 7leaders / OSL 2026 — หน้า 81 · คลิกเพื่อเปิดแคตตาล็อก">
+          <a class="hit" href="catalogs/7leaders-osl-catalog-2026.pdf#page=81" target="_blank" rel="noopener" aria-label="เปิดแคตตาล็อกหน้าที่มาของรูป"></a>
           <img src="img/catalog/osl-lineup.jpg" alt="เอ็นมิลโซลิดคาร์ไบด์ OSL หลายรุ่น" loading="lazy" style="object-position:center 70%">
-          <span class="cap">ที่มา: แคตตาล็อก 7leaders / OSL 2026 · หน้า 81</span>
+          <a class="cap" href="catalogs/7leaders-osl-catalog-2026.pdf#page=81" target="_blank" rel="noopener">ที่มา: แคตตาล็อก 7leaders / OSL 2026 · หน้า 81 ↗</a>
         </figure>
       </div>
       <div class="tile rv">
         <div class="label"><b>Precision Chuck</b><span>7leaders / OSL · APC</span></div>
-        <figure class="src" title="ที่มา: แคตตาล็อก 7leaders / OSL 2026 — หน้า 82">
+        <figure class="src" title="ที่มา: แคตตาล็อก 7leaders / OSL 2026 — หน้า 82 · คลิกเพื่อเปิดแคตตาล็อก">
+          <a class="hit" href="catalogs/7leaders-osl-catalog-2026.pdf#page=82" target="_blank" rel="noopener" aria-label="เปิดแคตตาล็อกหน้าที่มาของรูป"></a>
           <img src="img/catalog/osl-chuck.jpg" alt="หัวจับทูล APC Precision Chuck และดอกสว่าน" loading="lazy" style="padding:56px 18px 18px">
-          <span class="cap">ที่มา: แคตตาล็อก 7leaders / OSL 2026 · หน้า 82</span>
+          <a class="cap" href="catalogs/7leaders-osl-catalog-2026.pdf#page=82" target="_blank" rel="noopener">ที่มา: แคตตาล็อก 7leaders / OSL 2026 · หน้า 82 ↗</a>
         </figure>
       </div>
       <div class="tile rv">
         <div class="label"><b>Solid Carbide End Mill</b><span>HNCarbide</span></div>
-        <figure class="src" title="ที่มา: แคตตาล็อก HNCarbide Solid Carbide End Mill — หน้าปก">
+        <figure class="src" title="ที่มา: แคตตาล็อก HNCarbide Solid Carbide End Mill — หน้าปก · คลิกเพื่อเปิดแคตตาล็อก">
+          <a class="hit" href="catalogs/hncarbide-end-mill.pdf#page=1" target="_blank" rel="noopener" aria-label="เปิดแคตตาล็อกหน้าที่มาของรูป"></a>
           <img src="img/catalog/hn-endmills.jpg" alt="เอ็นมิลโซลิดคาร์ไบด์ HNCarbide" loading="lazy" style="object-fit:cover;object-position:center 35%;padding:0">
-          <span class="cap">ที่มา: แคตตาล็อก HNCarbide End Mill · หน้าปก</span>
+          <a class="cap" href="catalogs/hncarbide-end-mill.pdf#page=1" target="_blank" rel="noopener">ที่มา: แคตตาล็อก HNCarbide End Mill · หน้าปก ↗</a>
         </figure>
       </div>
       <div class="tile rv">
         <div class="label"><b>U-Drill D88</b><span>Pulcut · ดอกสว่านแบบอินเสิร์ท</span></div>
-        <figure class="src" title="ที่มา: แคตตาล็อก Pulcut Drilling Tools 2026 — หน้า 4">
+        <figure class="src" title="ที่มา: แคตตาล็อก Pulcut Drilling Tools 2026 — หน้า 4 · คลิกเพื่อเปิดแคตตาล็อก">
+          <a class="hit" href="catalogs/pulcut-drilling-tools-2026.pdf#page=4" target="_blank" rel="noopener" aria-label="เปิดแคตตาล็อกหน้าที่มาของรูป"></a>
           <img src="img/catalog/pulcut-d88.jpg" alt="ดอกสว่านอินเสิร์ท Pulcut D88" loading="lazy" style="padding:56px 18px 18px">
-          <span class="cap">ที่มา: แคตตาล็อก Pulcut Drilling Tools · หน้า 4</span>
+          <a class="cap" href="catalogs/pulcut-drilling-tools-2026.pdf#page=4" target="_blank" rel="noopener">ที่มา: แคตตาล็อก Pulcut Drilling Tools · หน้า 4 ↗</a>
         </figure>
       </div>
     </div>
