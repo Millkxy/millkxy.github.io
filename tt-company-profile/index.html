@@ -124,6 +124,10 @@ section{padding:110px 0}
 .bcard:hover{transform:translateY(-4px);box-shadow:0 22px 50px rgba(23,42,85,.12)}
 .bcard.feat{grid-row:span 2;background:linear-gradient(160deg,#fff 55%,#e8f1fb)}
 .bcard .logo{height:48px;width:auto;align-self:flex-start;object-fit:contain}
+.bcard .logo-link{align-self:flex-start;display:block}
+.site{align-self:flex-start;display:inline-flex;gap:6px;align-items:center;font-family:Prompt;font-size:14px;font-weight:500;color:var(--blue);text-decoration:none;padding:6px 0}
+.site:hover{text-decoration:underline}
+.strip a,footer .logos a{display:block;line-height:0}
 .bcard.feat .logo{height:64px}
 .tag{align-self:flex-start;font-family:'Prompt';font-size:11px;font-weight:700;letter-spacing:.14em;color:var(--navy);background:var(--yellow);padding:5px 10px;border-radius:6px}
 .bcard h3{font-size:22px;font-weight:600}
@@ -291,9 +295,9 @@ footer .logos{display:flex;gap:10px;align-items:center}
 <div class="strip">
   <div class="strip-in">
     <span>OUR BRANDS</span>
-    <img src="img/kennametal.png" alt="Kennametal">
-    <img src="img/hncarbide.png" alt="HNCarbide">
-    <img src="img/7leaders.png" alt="7leaders">
+    <a href="https://www.kennametal.com/" target="_blank" rel="noopener" title="Kennametal — เว็บไซต์"><img src="img/kennametal.png" alt="Kennametal"></a>
+    <a href="https://hncarbide.eu/" target="_blank" rel="noopener" title="HNCarbide — เว็บไซต์"><img src="img/hncarbide.png" alt="HNCarbide"></a>
+    <a href="https://www.7leaders.com/" target="_blank" rel="noopener" title="7leaders — เว็บไซต์"><img src="img/7leaders.png" alt="7leaders"></a>
   </div>
 </div>
 
@@ -332,9 +336,10 @@ footer .logos{display:flex;gap:10px;align-items:center}
     <div class="brand-grid">
       <article class="bcard feat rv">
         <span class="tag">FEATURED BRAND</span>
-        <img class="logo" src="img/kennametal.png" alt="Kennametal">
+        <a class="logo-link" href="https://www.kennametal.com/" target="_blank" rel="noopener"><img class="logo" src="img/kennametal.png" alt="Kennametal"></a>
         <h3>Kennametal<small>Global Cutting Tool Solutions · USA</small></h3>
         <p>ผู้ผลิตเครื่องมือตัดและวัสดุทนการสึกหรอระดับโลก เหมาะกับงานผลิตชิ้นส่วนยานยนต์ แม่พิมพ์ และอุตสาหกรรมทั่วไป ที่ต้องการความแม่นยำและอายุทูลที่ยาวนาน</p>
+        <a class="site" href="https://www.kennametal.com/" target="_blank" rel="noopener">เยี่ยมชมเว็บไซต์ kennametal.com <span aria-hidden="true">↗</span></a>
         <div class="caps">
           <div class="cap"><b>Turning</b><span>งานกลึง</span></div>
           <div class="cap"><b>Milling</b><span>งานกัด</span></div>
@@ -344,15 +349,17 @@ footer .logos{display:flex;gap:10px;align-items:center}
         </div>
       </article>
       <article class="bcard rv">
-        <img class="logo" src="img/hncarbide.png" alt="HNCarbide" style="height:34px">
+        <a class="logo-link" href="https://hncarbide.eu/" target="_blank" rel="noopener"><img class="logo" src="img/hncarbide.png" alt="HNCarbide" style="height:34px"></a>
         <h3>HNCarbide</h3>
         <p>เครื่องมือตัดคาร์ไบด์ ทั้งอินเสิร์ทงานกลึงและทูลโซลิดคาร์ไบด์ ตอบโจทย์ด้านความคุ้มค่า</p>
+        <a class="site" href="https://hncarbide.eu/" target="_blank" rel="noopener">เยี่ยมชมเว็บไซต์ hncarbide.eu <span aria-hidden="true">↗</span></a>
         <div class="pills"><span class="pill">Turning Insert</span><span class="pill">Solid Carbide</span></div>
       </article>
       <article class="bcard rv">
-        <img class="logo" src="img/7leaders.png" alt="7leaders">
+        <a class="logo-link" href="https://www.7leaders.com/" target="_blank" rel="noopener"><img class="logo" src="img/7leaders.png" alt="7leaders"></a>
         <h3>7leaders<small>The Art of Cutting</small></h3>
         <p>ทูลโซลิดคาร์ไบด์สำหรับงานกัดและงานเจาะ รองรับวัสดุหลากหลายประเภท</p>
+        <a class="site" href="https://www.7leaders.com/" target="_blank" rel="noopener">เยี่ยมชมเว็บไซต์ 7leaders.com <span aria-hidden="true">↗</span></a>
         <div class="pills"><span class="pill">End Mill</span><span class="pill">Drill</span><span class="pill">Solid Carbide</span></div>
       </article>
     </div>
@@ -500,7 +507,7 @@ footer .logos{display:flex;gap:10px;align-items:center}
 <footer>
   <div class="wrap">
     <span>© <span id="yr">2026</span> T.T. TOOLS AND PARTS CO.,LTD. · บริษัท ที.ที.ทูลส์ แอนด์ พาร์ท จำกัด</span>
-    <span class="logos"><img src="img/kennametal.png" alt="Kennametal"><img src="img/hncarbide.png" alt="HNCarbide"><img src="img/7leaders.png" alt="7leaders"></span>
+    <span class="logos"><a href="https://www.kennametal.com/" target="_blank" rel="noopener" title="Kennametal — เว็บไซต์"><img src="img/kennametal.png" alt="Kennametal"></a><a href="https://hncarbide.eu/" target="_blank" rel="noopener" title="HNCarbide — เว็บไซต์"><img src="img/hncarbide.png" alt="HNCarbide"></a><a href="https://www.7leaders.com/" target="_blank" rel="noopener" title="7leaders — เว็บไซต์"><img src="img/7leaders.png" alt="7leaders"></a></span>
   </div>
 </footer>
 
