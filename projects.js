@@ -31,18 +31,18 @@ window.PROJECTS = [
   },
   {
     url: "tt-company-profile/",
-    preview: "a4",
+    preview: "web",
     theme: "dark",
     th: {
       eyebrow: "Company Profile",
       title: "T.T. Tools and Parts",
-      desc: "โปรไฟล์บริษัท 6 หน้า A4 ออกแบบเป็นหน้าเว็บ พร้อมพิมพ์",
+      desc: "เว็บไซต์บริษัทเครื่องมือตัด พร้อมปุ่ม Export โบรชัวร์ A4 เป็น PDF",
       open: "เปิดดู"
     },
     en: {
       eyebrow: "Company Profile",
       title: "T.T. Tools and Parts",
-      desc: "A six-page A4 company profile built as a print-ready web page.",
+      desc: "A cutting-tool company website with a one-click A4 brochure PDF export.",
       open: "Open"
     }
   }
