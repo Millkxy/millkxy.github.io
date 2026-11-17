@@ -668,8 +668,14 @@ footer .logos{display:flex;gap:10px;align-items:center}
   var isSafari=/^((?!chrome|chromium|crios|fxios|edg|opr|android).)*safari/i.test(ua);
   var touch=matchMedia('(pointer:coarse)').matches;
   var newTab=isSafari||touch;
+  // Mac / iPad / iPhone: download the ready-made PDF directly (no print dialog).
+  // NOTE: TT-Tools-and-Parts-Company-Profile.pdf is a snapshot of brochure.html — regenerate it when the brochure changes.
+  var isApple=/Mac|iPhone|iPad|iPod/i.test(navigator.platform||'')||/Macintosh|iPhone|iPad/i.test(ua);
+  var PDF_FILE='TT-Tools-and-Parts-Company-Profile.pdf';
+  function downloadPdf(){ var a=document.createElement('a'); a.href=PDF_FILE; a.download='T.T. Tools and Parts - Company Profile.pdf'; document.body.appendChild(a); a.click(); a.remove(); say('กำลังดาวน์โหลดโบรชัวร์ PDF (A4, 7 หน้า)…'); }
   document.querySelectorAll('[data-pdf]').forEach(function(b){
     b.addEventListener('click',function(){
+      if(isApple){ downloadPdf(); return; }
       if(newTab){ var w=window.open('brochure.html?print=1','_blank'); if(!w) location.href='brochure.html?print=1'; return; }
       say('กำลังเตรียมโบรชัวร์ A4… เลือก “บันทึกเป็น PDF / Save as PDF” ในหน้าต่างพิมพ์');
       ensureFrame(function(){
