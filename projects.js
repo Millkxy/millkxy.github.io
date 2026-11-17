@@ -19,13 +19,13 @@ window.PROJECTS = [
     th: {
       eyebrow: "เรซูเม่",
       title: "วิศวกรโลหการ",
-      desc: "ประสบการณ์ทำงาน ทักษะ ใบรับรอง CQI-9 และผลงานระบบดิจิทัลในโรงงานชุบแข็ง",
+      desc: "เรซูเม่พร้อมเอกสารแนบ — ใบรับรองการศึกษา ใบประกาศ CQI-9 สหกิจศึกษา และใบผ่านการฝึกงาน",
       open: "ดูเรซูเม่"
     },
     en: {
       eyebrow: "Résumé",
       title: "Metallurgical Engineer.",
-      desc: "Experience, skills, CQI-9 training and digital systems built for a heat-treatment plant.",
+      desc: "Résumé with supporting documents — degree, CQI-9, co-op and internship certificates.",
       open: "View résumé"
     }
   },

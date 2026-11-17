@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Nichanat Prongnoi — Résumé</title>
-<meta name="description" content="Résumé of Nichanat Prongnoi, Metallurgical Engineer.">
+<meta name="description" content="Résumé and certificates of Nichanat Prongnoi, Metallurgical Engineer.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;600;700&display=swap" rel="stylesheet">
@@ -17,9 +17,13 @@ body{background:var(--bg);color:var(--ink);font-family:'Sarabun',system-ui,sans-
 .top a{color:var(--link);text-decoration:none}
 .top a:hover{text-decoration:underline}
 .top .sp{flex:1}
+.top .count{color:#6e6e73;font-size:13px}
 .top button{font:inherit;font-size:13px;border:0;border-radius:980px;background:#0071e3;color:#fff;padding:6px 14px;cursor:pointer}
-.stage{margin:24px auto 48px;width:max-content}
-.page{position:relative;width:210mm;height:297mm;background:#fff;box-shadow:0 10px 40px rgba(0,0,0,.12);transform-origin:top left}
+#pages{padding:24px 0 48px}
+.stage{margin:0 auto 24px}
+.page{position:relative;width:210mm;height:297mm;background:#fff;box-shadow:0 10px 40px rgba(0,0,0,.12);transform-origin:top left;overflow:hidden}
+.page.land{width:297mm;height:210mm;page:land}
+.page>img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;display:block}
 .rz{position:absolute;inset:0;display:grid;grid-template-columns:72mm 1fr;font-size:calc(11.5px * var(--fs,1));line-height:1.42}
 .rz .side,.rz .main{display:flex;flex-direction:column;justify-content:space-between;min-height:0}
 .rz .side{background:var(--navy);color:#fff;padding:12mm 7mm 10mm 8mm;justify-content:flex-start}
@@ -38,14 +42,19 @@ body{background:var(--bg);color:var(--ink);font-family:'Sarabun',system-ui,sans-
 .rz .name{font-size:2.6em;line-height:1.05;font-weight:700;color:var(--navy);letter-spacing:.02em}
 .rz .role{font-size:1.15em;font-weight:600;color:var(--accent);letter-spacing:.14em;margin-top:.35em}
 .rz .sub{color:var(--muted)}
+.rz .salary{margin-top:.5em;font-size:1.05em;color:var(--ink)}
 body.embed .top{display:none}
-body.embed .stage{margin:0}
+body.embed #pages{padding:0}
+body.embed .stage:not(:first-child){display:none}
 @page{size:A4;margin:0}
+@page land{size:A4 landscape;margin:0}
 @media print{
   body{background:#fff}
   .top{display:none}
-  .stage{margin:0;height:auto!important;width:auto}
-  .page{box-shadow:none;transform:none!important}
+  #pages{padding:0}
+  .stage{margin:0;height:auto!important;width:auto!important}
+  .page{box-shadow:none;transform:none!important;break-after:page;page-break-after:always}
+  .stage:last-child .page{break-after:auto;page-break-after:auto}
   .rz .side{-webkit-print-color-adjust:exact;print-color-adjust:exact}
 }
 </style>
@@ -54,14 +63,18 @@ body.embed .stage{margin:0}
 <div class="top">
   <a href="../">‹ <span data-th="ผลงานทั้งหมด">All work</span></a>
   <span class="sp"></span>
+  <span class="count" data-th="8 หน้า">8 pages</span>
   <button type="button" onclick="print()" data-th="พิมพ์ / PDF">Print / PDF</button>
 </div>
-<div class="stage"><div class="page">
+<main id="pages">
+<div class="stage"><div class="page resume">
 <div class="rz">
   <div class="side">
     <div class="sec"><h3>Contact</h3>
       <div class="it"><span class="lbl">Tel:</span> 08-6112-7013</div>
       <div class="it"><span class="lbl">Email:</span> Nichanat1677@gmail.com</div>
+      <div class="it"><span class="lbl">Address:</span> 43/24 Ngam Kamon Phatthana Road, Nang Rong Sub-district, Nang Rong District, Buri Ram</div>
+      <div class="it"><span class="lbl">Date of Birth:</span> 28 July 2002</div>
     </div>
     <div class="sec"><h3>Education</h3>
       <div class="it"><div class="yr">2020 – 2025</div>Suranaree University of Technology, Nakhon Ratchasima<br>Bachelor of Engineering (Metallurgical Engineering)<br><span class="lbl">Graduated:</span> 10 June 2025</div>
@@ -85,7 +98,7 @@ body.embed .stage{margin:0}
     </div>
   </div>
   <div class="main">
-    <div class="sec hdr"><div class="name">NICHANAT<br>PRONGNOI</div><div class="role">METALLURGICAL ENGINEERING</div></div>
+    <div class="sec hdr"><div class="name">NICHANAT<br>PRONGNOI</div><div class="role">METALLURGICAL ENGINEERING</div><div class="salary"><span class="lbl">Expected Salary:</span> 25,000 THB / month</div></div>
     <div class="sec"><h3>About Me</h3>
       <div class="it"><p>I chose to study engineering because I enjoy challenges and problem-solving. Studying at Suranaree University of Technology has given me the opportunity to grow through academic learning, hands-on training, cooperative education, and extracurricular activities. These experiences have helped me become more mature, responsible, and capable of handling real-world problems.</p></div>
     </div>
@@ -115,28 +128,39 @@ body.embed .stage{margin:0}
   </div>
 </div>
 </div></div>
+<div class="stage"><div class="page"><img src="docs/doc-1.jpg" alt="Degree certificate — Suranaree University of Technology"></div></div>
+<div class="stage"><div class="page"><img src="docs/doc-2.jpg" alt="Military reserve training certificate, Year 5"></div></div>
+<div class="stage"><div class="page"><img src="docs/doc-3.jpg" alt="Certificate of completion — Nonferrous Metallurgy Course"></div></div>
+<div class="stage"><div class="page"><img src="docs/doc-4.jpg" alt="Certificate of recognition — Metallurgical Engineering Cooperative Education"></div></div>
+<div class="stage"><div class="page"><img src="docs/doc-5.jpg" alt="Internship certificate — Revima Asia Pacific"></div></div>
+<div class="stage"><div class="page land"><img src="docs/doc-6.jpg" alt="Cooperative education certificate"></div></div>
+<div class="stage"><div class="page land"><img src="docs/doc-7.jpg" alt="CQI-9 Heat Treat System Assessment training certificate"></div></div>
+</main>
 <script>
 (function(){
   var q=new URLSearchParams(location.search);
   if(q.has('embed')) document.body.classList.add('embed');
   try{ if(localStorage.getItem('lang')==='th'){ document.querySelectorAll('[data-th]').forEach(function(e){ e.textContent=e.dataset.th; }); } }catch(e){}
-  var page=document.querySelector('.page'), stage=document.querySelector('.stage');
+  var resume=document.querySelector('.page.resume');
   function fit(){
-    var cols=[].slice.call(page.querySelectorAll('.rz > .side, .rz > .main'));
+    var cols=[].slice.call(resume.querySelectorAll('.rz > .side, .rz > .main'));
     var ok=function(){ return cols.every(function(c){ return c.scrollHeight<=c.clientHeight+1; }); };
     var lo=.6, hi=1.6;
-    for(var i=0;i<14;i++){ var m=(lo+hi)/2; page.style.setProperty('--fs',m); if(ok()) lo=m; else hi=m; }
-    page.style.setProperty('--fs', Math.floor(lo*990)/1000);
+    for(var i=0;i<14;i++){ var m=(lo+hi)/2; resume.style.setProperty('--fs',m); if(ok()) lo=m; else hi=m; }
+    resume.style.setProperty('--fs', Math.floor(lo*990)/1000);
   }
   function scale(){
-    var W=page.offsetWidth, H=page.offsetHeight;
-    var s=Math.min(1,(document.documentElement.clientWidth-(document.body.classList.contains('embed')?0:32))/W);
-    page.style.transform=s<1?'scale('+s+')':'';
-    stage.style.width=(W*s)+'px'; stage.style.height=(H*s)+'px';
+    var avail=document.documentElement.clientWidth-(document.body.classList.contains('embed')?0:32);
+    document.querySelectorAll('.stage').forEach(function(st){
+      var p=st.firstElementChild, W=p.offsetWidth, H=p.offsetHeight, s=Math.min(1,avail/W);
+      p.style.transform=s<1?'scale('+s+')':'';
+      st.style.width=(W*s)+'px'; st.style.height=(H*s)+'px';
+    });
   }
   (document.fonts&&document.fonts.ready?document.fonts.ready:Promise.resolve()).then(function(){ fit(); scale(); });
   fit(); scale();
   addEventListener('resize',scale);
+  addEventListener('beforeprint',function(){ document.querySelectorAll('img[loading=lazy]').forEach(function(i){ i.loading='eager'; }); });
 })();
 </script>
 </body>
