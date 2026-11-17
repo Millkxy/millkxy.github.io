@@ -119,10 +119,64 @@ section{padding:110px 0}
 
 /* ---------- brands ---------- */
 .brands{background:var(--mist)}
-.brand-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:20px;margin-top:50px}
+.brand-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:50px}
 .bcard{background:#fff;border-radius:var(--r);padding:36px;display:flex;flex-direction:column;gap:14px;box-shadow:0 1px 0 var(--line);transition:transform .3s,box-shadow .3s}
 .bcard:hover{transform:translateY(-4px);box-shadow:0 22px 50px rgba(23,42,85,.12)}
-.bcard.feat{grid-row:span 2;background:linear-gradient(160deg,#fff 55%,#e8f1fb)}
+.bcard.feat{grid-column:1/-1;display:grid;grid-template-columns:1fr 1.1fr;gap:14px 40px;align-items:start;background:linear-gradient(160deg,#fff 55%,#e8f1fb)}
+.bcard.feat .feat-l{display:flex;flex-direction:column;gap:14px}
+.bcard.feat .caps{margin-top:0;padding-top:0;grid-template-columns:repeat(auto-fill,minmax(140px,1fr))}
+.bcard .pul-logo{height:46px;width:auto;border-radius:8px}
+.links-row{display:flex;flex-wrap:wrap;gap:4px 18px;align-items:center}
+.cat-link{color:var(--muted)}
+.cat-link:hover{color:var(--blue)}
+
+/* image with source caption on hover */
+.src{position:relative;margin:0;overflow:hidden}
+.src>img{display:block;width:100%;height:100%;object-fit:cover}
+.src .cap{position:absolute;left:12px;bottom:12px;max-width:calc(100% - 24px);display:inline-flex;gap:6px;align-items:center;font-family:'Prompt';font-size:12.5px;line-height:1.3;color:#fff;text-decoration:none;background:rgba(14,28,61,.86);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);padding:7px 11px;border-radius:10px;opacity:0;transform:translateY(8px);transition:opacity .25s,transform .25s}
+.src:hover .cap,.src:focus-within .cap{opacity:1;transform:none}
+.src .cap:hover{background:var(--blue)}
+@media (hover:none){ .src .cap{opacity:1;transform:none;font-size:11px;padding:5px 9px} }
+
+/* maker row (7leaders factory) */
+.maker{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:20px}
+.maker .src{border-radius:var(--r);aspect-ratio:16/8;background:#fff}
+.maker-note{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:8px 24px;align-items:baseline;font-family:'Prompt';color:var(--navy)}
+.maker-note b{font-size:18px}
+.maker-note span{color:var(--muted);font-size:15px}
+@media (max-width:700px){ .maker{grid-template-columns:1fr} }
+
+/* showcase from catalogs */
+.show{display:grid;grid-template-columns:1.4fr 1fr;grid-auto-rows:220px;gap:20px;margin-top:20px}
+.show .tile{position:relative;border-radius:var(--r);overflow:hidden;background:#fff;box-shadow:inset 0 0 0 1px var(--line)}
+.show .tile.big{grid-row:span 3}
+.show .tile .src{position:absolute;inset:0}
+.show .tile .src>img{object-fit:contain;background:#fff;padding:18px}
+.show .tile.big .src>img{object-fit:cover;padding:0}
+.show .label{position:absolute;top:14px;left:14px;z-index:2;font-family:'Prompt';pointer-events:none;background:rgba(255,255,255,.92);padding:8px 13px;border-radius:12px;box-shadow:0 4px 14px rgba(23,42,85,.08)}
+.show .label b{display:block;font-size:19px;color:var(--navy);line-height:1.2}
+.show .label span{font-size:13px;color:var(--muted)}
+.show .tile.big .label b{color:var(--navy)}
+@media (max-width:900px){ .show{grid-template-columns:1fr;grid-auto-rows:260px} .show .tile.big{grid-row:auto} }
+
+/* catalogs */
+.catalogs{background:#fff}
+.cat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:50px}
+.cat{display:flex;flex-direction:column;border-radius:var(--r);overflow:hidden;background:var(--mist);transition:transform .3s,box-shadow .3s}
+.cat:hover{transform:translateY(-6px);box-shadow:0 24px 50px rgba(23,42,85,.14)}
+.cat .cover{display:block;aspect-ratio:3/4;overflow:hidden;background:#fff;border-bottom:1px solid var(--line)}
+.cat .cover img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .8s cubic-bezier(.2,.8,.2,1)}
+.cat:hover .cover img{transform:scale(1.03)}
+.cat .body{padding:22px 24px 24px;display:flex;flex-direction:column;gap:6px;flex:1}
+.cat .brand-name{font-family:'Prompt';font-size:12px;font-weight:600;letter-spacing:.14em;color:var(--blue)}
+.cat h3{font-size:20px;font-weight:600}
+.cat .meta{font-size:14px;color:var(--muted)}
+.cat .acts{display:flex;gap:10px;flex-wrap:wrap;margin-top:auto;padding-top:12px}
+.cat .acts .btn{padding:10px 16px;font-size:14px}
+.btn-line{background:#fff;color:var(--navy);box-shadow:inset 0 0 0 1px var(--line)}
+.btn-line:hover{box-shadow:inset 0 0 0 1px var(--navy)}
+@media (max-width:900px){ .cat-grid{grid-template-columns:1fr 1fr} }
+@media (max-width:560px){ .cat-grid{grid-template-columns:1fr} }
 .bcard .logo{height:48px;width:auto;align-self:flex-start;object-fit:contain}
 .bcard .logo-link{align-self:flex-start;display:block}
 .site{align-self:flex-start;display:inline-flex;gap:6px;align-items:center;font-family:Prompt;font-size:14px;font-weight:500;color:var(--blue);text-decoration:none;padding:6px 0}
@@ -142,7 +196,7 @@ section{padding:110px 0}
 .help{margin-top:20px;border-radius:var(--r);background:var(--navy);color:#fff;padding:26px 32px;display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-content:space-between}
 .help p{margin:0;font-family:'Prompt';font-size:18px}
 .help .tels{display:flex;gap:10px;flex-wrap:wrap}
-@media (max-width:900px){ .brand-grid{grid-template-columns:1fr} .bcard.feat{grid-row:auto} }
+@media (max-width:900px){ .brand-grid{grid-template-columns:1fr} .bcard.feat{grid-template-columns:1fr} }
 
 /* ---------- special tools ---------- */
 .special{position:relative;overflow:hidden;background:radial-gradient(900px 500px at 100% 0%,rgba(53,174,240,.18),transparent 60%),var(--navy2)}
@@ -259,6 +313,7 @@ footer .logos{display:flex;gap:10px;align-items:center}
       <a href="#brands">แบรนด์</a>
       <a href="#special">ทูลพิเศษ</a>
       <a href="#products">สินค้า</a>
+      <a href="#catalogs">แคตตาล็อก</a>
       <a href="#process">บริการ</a>
       <a href="#contact">ติดต่อ</a>
     </nav>
@@ -287,7 +342,6 @@ footer .logos{display:flex;gap:10px;align-items:center}
     </div>
     <div class="hero-img rv">
       <img src="img/carbide.jpg" alt="ทูลโซลิดคาร์ไบด์ — เอ็นมิล ดอกต๊าป และดอกกัด">
-      <div class="stat"><b>3</b><span>แบรนด์ระดับสากล</span></div>
     </div>
   </div>
 </section>
@@ -298,6 +352,7 @@ footer .logos{display:flex;gap:10px;align-items:center}
     <a href="https://www.kennametal.com/" target="_blank" rel="noopener" title="Kennametal — เว็บไซต์"><img src="img/kennametal.png" alt="Kennametal"></a>
     <a href="https://hncarbide.eu/" target="_blank" rel="noopener" title="HNCarbide — เว็บไซต์"><img src="img/hncarbide.png" alt="HNCarbide"></a>
     <a href="https://www.7leaders.com/" target="_blank" rel="noopener" title="7leaders — เว็บไซต์"><img src="img/7leaders.png" alt="7leaders"></a>
+    <a href="catalogs/pulcut-drilling-tools-2026.pdf" target="_blank" rel="noopener" title="Pulcut — แคตตาล็อก"><img src="img/pulcut-logo.jpg" alt="Pulcut" style="border-radius:6px"></a>
   </div>
 </div>
 
@@ -335,11 +390,13 @@ footer .logos{display:flex;gap:10px;align-items:center}
     <p class="lead rv">เครื่องมือตัดจากผู้ผลิตระดับสากล ครอบคลุมงานกลึง กัด เจาะ และทำเกลียว</p>
     <div class="brand-grid">
       <article class="bcard feat rv">
+        <div class="feat-l">
         <span class="tag">FEATURED BRAND</span>
         <a class="logo-link" href="https://www.kennametal.com/" target="_blank" rel="noopener"><img class="logo" src="img/kennametal.png" alt="Kennametal"></a>
         <h3>Kennametal<small>Global Cutting Tool Solutions · USA</small></h3>
         <p>ผู้ผลิตเครื่องมือตัดและวัสดุทนการสึกหรอระดับโลก เหมาะกับงานผลิตชิ้นส่วนยานยนต์ แม่พิมพ์ และอุตสาหกรรมทั่วไป ที่ต้องการความแม่นยำและอายุทูลที่ยาวนาน</p>
         <a class="site" href="https://www.kennametal.com/" target="_blank" rel="noopener">เยี่ยมชมเว็บไซต์ kennametal.com <span aria-hidden="true">↗</span></a>
+        </div>
         <div class="caps">
           <div class="cap"><b>Turning</b><span>งานกลึง</span></div>
           <div class="cap"><b>Milling</b><span>งานกัด</span></div>
@@ -352,16 +409,43 @@ footer .logos{display:flex;gap:10px;align-items:center}
         <a class="logo-link" href="https://hncarbide.eu/" target="_blank" rel="noopener"><img class="logo" src="img/hncarbide.png" alt="HNCarbide" style="height:34px"></a>
         <h3>HNCarbide</h3>
         <p>เครื่องมือตัดคาร์ไบด์ ทั้งอินเสิร์ทงานกลึงและทูลโซลิดคาร์ไบด์ ตอบโจทย์ด้านความคุ้มค่า</p>
-        <a class="site" href="https://hncarbide.eu/" target="_blank" rel="noopener">เยี่ยมชมเว็บไซต์ hncarbide.eu <span aria-hidden="true">↗</span></a>
+        <div class="links-row">
+          <a class="site" href="https://hncarbide.eu/" target="_blank" rel="noopener">เยี่ยมชมเว็บไซต์ hncarbide.eu <span aria-hidden="true">↗</span></a>
+          <a class="site cat-link" href="catalogs/hncarbide-end-mill.pdf" target="_blank" rel="noopener">แคตตาล็อก End Mill (PDF)</a>
+        </div>
         <div class="pills"><span class="pill">Turning Insert</span><span class="pill">Solid Carbide</span></div>
       </article>
       <article class="bcard rv">
         <a class="logo-link" href="https://www.7leaders.com/" target="_blank" rel="noopener"><img class="logo" src="img/7leaders.png" alt="7leaders"></a>
-        <h3>7leaders<small>The Art of Cutting</small></h3>
+        <h3>7leaders<small>The Art of Cutting · แบรนด์ OSL</small></h3>
         <p>ทูลโซลิดคาร์ไบด์สำหรับงานกัดและงานเจาะ รองรับวัสดุหลากหลายประเภท</p>
-        <a class="site" href="https://www.7leaders.com/" target="_blank" rel="noopener">เยี่ยมชมเว็บไซต์ 7leaders.com <span aria-hidden="true">↗</span></a>
-        <div class="pills"><span class="pill">End Mill</span><span class="pill">Drill</span><span class="pill">Solid Carbide</span></div>
+        <div class="links-row">
+          <a class="site" href="https://www.7leaders.com/" target="_blank" rel="noopener">เยี่ยมชมเว็บไซต์ 7leaders.com <span aria-hidden="true">↗</span></a>
+          <a class="site cat-link" href="catalogs/7leaders-osl-catalog-2026.pdf" target="_blank" rel="noopener">แคตตาล็อก OSL 2026 (PDF)</a>
+        </div>
+        <div class="pills"><span class="pill">End Mill</span><span class="pill">Drill</span><span class="pill">Solid Carbide</span><span class="pill">Precision Chuck</span></div>
       </article>
+      <article class="bcard rv">
+        <a class="logo-link" href="catalogs/pulcut-drilling-tools-2026.pdf" target="_blank" rel="noopener"><img class="pul-logo" src="img/pulcut-logo.jpg" alt="Pulcut"></a>
+        <h3>Pulcut<small>Drilling Tools · เครื่องมืองานเจาะ</small></h3>
+        <p>เครื่องมืองานเจาะ ตั้งแต่ดอกสว่านแบบอินเสิร์ท (U-Drill) ดอกเจาะหัวเปลี่ยนได้ ไปจนถึงงานเจาะรูลึก</p>
+        <div class="links-row">
+          <a class="site" href="catalogs/pulcut-drilling-tools-2026.pdf" target="_blank" rel="noopener">แคตตาล็อก Drilling Tools (PDF) <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="pills"><span class="pill">U-Drill D88</span><span class="pill">Crown Drill</span><span class="pill">Spade Drill</span><span class="pill">Gun Drill</span><span class="pill">Ejector Drill</span></div>
+      </article>
+    </div>
+
+    <div class="maker">
+      <div class="maker-note rv"><b>7leaders — ผู้ผลิตจากไต้หวัน ตั้งแต่ปี 1990</b><span>ผลิตอัตโนมัติ 24 ชั่วโมง พร้อมบริการเคลือบผิวทูล (PVD Coating)</span></div>
+      <figure class="src rv" title="ที่มา: แคตตาล็อก 7leaders / OSL 2026 — หน้า 2">
+        <img src="img/catalog/osl-factory.jpg" alt="สายการผลิตเครื่องเจียร CNC ของ 7leaders" loading="lazy">
+        <a class="cap" href="catalogs/7leaders-osl-catalog-2026.pdf#page=2" target="_blank" rel="noopener">ที่มา: แคตตาล็อก 7leaders / OSL 2026 · หน้า 2 ↗</a>
+      </figure>
+      <figure class="src rv" title="ที่มา: แคตตาล็อก 7leaders / OSL 2026 — หน้า 5">
+        <img src="img/catalog/osl-coating.jpg" alt="งานเคลือบผิวทูล และการทดสอบตัดงานจริง" loading="lazy">
+        <a class="cap" href="catalogs/7leaders-osl-catalog-2026.pdf#page=5" target="_blank" rel="noopener">ที่มา: แคตตาล็อก 7leaders / OSL 2026 · หน้า 5 ↗</a>
+      </figure>
     </div>
     <div class="help rv">
       <p>ไม่แน่ใจว่าทูลตัวไหนเหมาะกับงาน? ส่งแบบชิ้นงานหรือวัสดุมา เราช่วยแนะนำให้</p>
@@ -456,12 +540,90 @@ footer .logos{display:flex;gap:10px;align-items:center}
         </div>
       </article>
     </div>
+    <h3 class="rv" style="margin-top:60px;font-size:22px;font-weight:600">สินค้าจากแบรนด์ที่เราจัดจำหน่าย <span style="color:var(--muted);font-weight:400;font-size:16px">ชี้ที่รูปเพื่อดูที่มา</span></h3>
+    <div class="show">
+      <div class="tile big rv">
+        <div class="label"><b>Solid Carbide End Mills</b><span>7leaders / OSL</span></div>
+        <figure class="src" title="ที่มา: แคตตาล็อก 7leaders / OSL 2026 — หน้า 81">
+          <img src="img/catalog/osl-lineup.jpg" alt="เอ็นมิลโซลิดคาร์ไบด์ OSL หลายรุ่น" loading="lazy" style="object-position:center 70%">
+          <a class="cap" href="catalogs/7leaders-osl-catalog-2026.pdf#page=81" target="_blank" rel="noopener">ที่มา: แคตตาล็อก 7leaders / OSL 2026 · หน้า 81 ↗</a>
+        </figure>
+      </div>
+      <div class="tile rv">
+        <div class="label"><b>Precision Chuck</b><span>7leaders / OSL · APC</span></div>
+        <figure class="src" title="ที่มา: แคตตาล็อก 7leaders / OSL 2026 — หน้า 82">
+          <img src="img/catalog/osl-chuck.jpg" alt="หัวจับทูล APC Precision Chuck และดอกสว่าน" loading="lazy" style="padding:56px 18px 18px">
+          <a class="cap" href="catalogs/7leaders-osl-catalog-2026.pdf#page=82" target="_blank" rel="noopener">ที่มา: แคตตาล็อก 7leaders / OSL 2026 · หน้า 82 ↗</a>
+        </figure>
+      </div>
+      <div class="tile rv">
+        <div class="label"><b>Solid Carbide End Mill</b><span>HNCarbide</span></div>
+        <figure class="src" title="ที่มา: แคตตาล็อก HNCarbide Solid Carbide End Mill — หน้าปก">
+          <img src="img/catalog/hn-endmills.jpg" alt="เอ็นมิลโซลิดคาร์ไบด์ HNCarbide" loading="lazy" style="object-fit:cover;object-position:center 35%;padding:0">
+          <a class="cap" href="catalogs/hncarbide-end-mill.pdf#page=1" target="_blank" rel="noopener">ที่มา: แคตตาล็อก HNCarbide End Mill · หน้าปก ↗</a>
+        </figure>
+      </div>
+      <div class="tile rv">
+        <div class="label"><b>U-Drill D88</b><span>Pulcut · ดอกสว่านแบบอินเสิร์ท</span></div>
+        <figure class="src" title="ที่มา: แคตตาล็อก Pulcut Drilling Tools 2026 — หน้า 4">
+          <img src="img/catalog/pulcut-d88.jpg" alt="ดอกสว่านอินเสิร์ท Pulcut D88" loading="lazy" style="padding:56px 18px 18px">
+          <a class="cap" href="catalogs/pulcut-drilling-tools-2026.pdf#page=4" target="_blank" rel="noopener">ที่มา: แคตตาล็อก Pulcut Drilling Tools · หน้า 4 ↗</a>
+        </figure>
+      </div>
+    </div>
+
     <h3 class="rv" style="margin-top:60px;font-size:22px;font-weight:600">อุตสาหกรรมที่เราดูแล</h3>
     <div class="ind">
       <div class="rv"><b>Automotive</b><span>ชิ้นส่วนยานยนต์</span></div>
       <div class="rv"><b>Die &amp; Mold</b><span>แม่พิมพ์</span></div>
       <div class="rv"><b>General Machining</b><span>งานกลึง-กัดทั่วไป</span></div>
       <div class="rv"><b>Industrial Parts</b><span>ชิ้นส่วนอุตสาหกรรม</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- CATALOGS -->
+<section id="catalogs" class="catalogs">
+  <div class="wrap">
+    <span class="eyebrow rv">Catalogs</span>
+    <h2 class="h2 rv">แคตตาล็อกสินค้า<small>เปิดดูหรือดาวน์โหลดแคตตาล็อกฉบับเต็มของแต่ละแบรนด์ (PDF)</small></h2>
+    <div class="cat-grid">
+      <article class="cat rv">
+        <a class="cover" href="catalogs/7leaders-osl-catalog-2026.pdf" target="_blank" rel="noopener" title="ที่มา: หน้าปกแคตตาล็อก 7leaders / OSL 2026"><img src="img/catalog/cover-osl.jpg" alt="หน้าปกแคตตาล็อก OSL Solid Carbide End Mills / Drills" loading="lazy"></a>
+        <div class="body">
+          <span class="brand-name">7LEADERS · OSL</span>
+          <h3>Solid Carbide End Mills / Drills 2026</h3>
+          <span class="meta">92 หน้า · PDF 24.5 MB · ภาษาอังกฤษ</span>
+          <div class="acts">
+            <a class="btn btn-dark" href="catalogs/7leaders-osl-catalog-2026.pdf" target="_blank" rel="noopener">เปิดดู</a>
+            <a class="btn btn-line" href="catalogs/7leaders-osl-catalog-2026.pdf" download>ดาวน์โหลด</a>
+          </div>
+        </div>
+      </article>
+      <article class="cat rv">
+        <a class="cover" href="catalogs/hncarbide-end-mill.pdf" target="_blank" rel="noopener" title="ที่มา: หน้าปกแคตตาล็อก HNCarbide Solid Carbide End Mill"><img src="img/catalog/cover-hncarbide.jpg" alt="หน้าปกแคตตาล็อก HNCarbide Solid Carbide End Mill" loading="lazy"></a>
+        <div class="body">
+          <span class="brand-name">HNCARBIDE</span>
+          <h3>Solid Carbide End Mill</h3>
+          <span class="meta">35 หน้า · PDF 44 MB · ภาษาอังกฤษ</span>
+          <div class="acts">
+            <a class="btn btn-dark" href="catalogs/hncarbide-end-mill.pdf" target="_blank" rel="noopener">เปิดดู</a>
+            <a class="btn btn-line" href="catalogs/hncarbide-end-mill.pdf" download>ดาวน์โหลด</a>
+          </div>
+        </div>
+      </article>
+      <article class="cat rv">
+        <a class="cover" href="catalogs/pulcut-drilling-tools-2026.pdf" target="_blank" rel="noopener" title="ที่มา: หน้าปกแคตตาล็อก Pulcut Drilling Tools"><img src="img/catalog/cover-pulcut.jpg" alt="หน้าปกแคตตาล็อก Pulcut Drilling Tools" loading="lazy"></a>
+        <div class="body">
+          <span class="brand-name">PULCUT</span>
+          <h3>Drilling Tools 2026</h3>
+          <span class="meta">71 หน้า · PDF 12.9 MB · จีน / อังกฤษ</span>
+          <div class="acts">
+            <a class="btn btn-dark" href="catalogs/pulcut-drilling-tools-2026.pdf" target="_blank" rel="noopener">เปิดดู</a>
+            <a class="btn btn-line" href="catalogs/pulcut-drilling-tools-2026.pdf" download>ดาวน์โหลด</a>
+          </div>
+        </div>
+      </article>
     </div>
   </div>
 </section>
@@ -507,7 +669,7 @@ footer .logos{display:flex;gap:10px;align-items:center}
 <footer>
   <div class="wrap">
     <span>© <span id="yr">2026</span> T.T. TOOLS AND PARTS CO.,LTD. · บริษัท ที.ที.ทูลส์ แอนด์ พาร์ท จำกัด</span>
-    <span class="logos"><a href="https://www.kennametal.com/" target="_blank" rel="noopener" title="Kennametal — เว็บไซต์"><img src="img/kennametal.png" alt="Kennametal"></a><a href="https://hncarbide.eu/" target="_blank" rel="noopener" title="HNCarbide — เว็บไซต์"><img src="img/hncarbide.png" alt="HNCarbide"></a><a href="https://www.7leaders.com/" target="_blank" rel="noopener" title="7leaders — เว็บไซต์"><img src="img/7leaders.png" alt="7leaders"></a></span>
+    <span class="logos"><a href="https://www.kennametal.com/" target="_blank" rel="noopener" title="Kennametal — เว็บไซต์"><img src="img/kennametal.png" alt="Kennametal"></a><a href="https://hncarbide.eu/" target="_blank" rel="noopener" title="HNCarbide — เว็บไซต์"><img src="img/hncarbide.png" alt="HNCarbide"></a><a href="https://www.7leaders.com/" target="_blank" rel="noopener" title="7leaders — เว็บไซต์"><img src="img/7leaders.png" alt="7leaders"></a><a href="catalogs/pulcut-drilling-tools-2026.pdf" target="_blank" rel="noopener" title="Pulcut — แคตตาล็อก"><img src="img/pulcut-logo.jpg" alt="Pulcut" style="padding:0"></a></span>
   </div>
 </footer>
 
@@ -554,10 +716,14 @@ footer .logos{display:flex;gap:10px;align-items:center}
     if(!frame){ frame=document.createElement('iframe'); frame.id='pdfFrame'; frame.setAttribute('aria-hidden','true'); frame.tabIndex=-1; frame.src='brochure.html'; document.body.appendChild(frame); }
     frame.addEventListener('load',function(){ ready=true; setTimeout(cb,400); },{once:true});
   }
+  var ua=navigator.userAgent;
+  // Safari (Mac/iPhone/iPad) and touch devices: printing a hidden iframe is unreliable there, so open the brochure in its own tab and print it
+  var isSafari=/^((?!chrome|chromium|crios|fxios|edg|opr|android).)*safari/i.test(ua);
   var touch=matchMedia('(pointer:coarse)').matches;
+  var newTab=isSafari||touch;
   document.querySelectorAll('[data-pdf]').forEach(function(b){
     b.addEventListener('click',function(){
-      if(touch){ window.open('brochure.html?print=1','_blank'); return; }
+      if(newTab){ var w=window.open('brochure.html?print=1','_blank'); if(!w) location.href='brochure.html?print=1'; return; }
       say('กำลังเตรียมโบรชัวร์ A4… เลือก “บันทึกเป็น PDF / Save as PDF” ในหน้าต่างพิมพ์');
       ensureFrame(function(){
         try{ frame.contentWindow.focus(); frame.contentWindow.print(); }
